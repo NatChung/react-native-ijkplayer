@@ -13,11 +13,15 @@ import java.util.Collections;
 import java.util.List;
 
 public class RCTIJKPlayerPackage implements ReactPackage {
-    private Activity activity = null;
+    //private Activity activity = null;
     private static final String TAG = "RCTIJKPlayerPackage";
-    public RCTIJKPlayerPackage(Activity activity){
-        this.activity = activity;
+
+    public RCTIJKPlayerPackage(){
     }
+
+//    public RCTIJKPlayerPackage(Activity activity){
+//        this.activity = activity;
+//    }
 
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactApplicationContext) {
@@ -32,7 +36,7 @@ public class RCTIJKPlayerPackage implements ReactPackage {
     @Override
     public List<ViewManager> createViewManagers(ReactApplicationContext reactApplicationContext) {
         //noinspection ArraysAsListWithZeroOrOneArgument
-        return Collections.<ViewManager>singletonList(new RCTIJKPlayerViewManager(activity));
+        return Collections.<ViewManager>singletonList(new RCTIJKPlayerViewManager());
     }
 
 }

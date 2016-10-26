@@ -1,18 +1,18 @@
 package me.yiii.RCTIJKPlayer;
 
-import android.app.Activity;
+import android.support.annotation.Nullable;
+import android.util.Log;
 
+import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
-import com.facebook.react.uimanager.ViewGroupManager;
+import com.facebook.react.uimanager.annotations.ReactProp;
 
-public class RCTIJKPlayerViewManager extends ViewGroupManager<RCTIJKPlayerView> {
+public class RCTIJKPlayerViewManager extends SimpleViewManager<RCTIJKPlayerView> {
     private static final String REACT_CLASS = "RCTIJKPlayer";
 
-    private Activity activity = null;
+    public static final String PROP_SOURCE = "source";
 
-    public RCTIJKPlayerViewManager(Activity activity){
-        this.activity = activity;
-    }
+    public RCTIJKPlayerViewManager(){}
 
     @Override
     public String getName() {
@@ -21,7 +21,11 @@ public class RCTIJKPlayerViewManager extends ViewGroupManager<RCTIJKPlayerView> 
 
     @Override
     public RCTIJKPlayerView createViewInstance(ThemedReactContext context) {
-        return new RCTIJKPlayerView(context, this.activity);
+        return new RCTIJKPlayerView(context);
     }
 
+    @ReactProp(name = PROP_SOURCE)
+    public void setPropSource( RCTIJKPlayerView view, @Nullable String param) {
+        view.start(param);
+    }
 }

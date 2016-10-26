@@ -29,7 +29,7 @@ public class RCTIJKPlayerView extends FrameLayout {
     private static final String TAG = "RCTIJKPlayerView";
     private final Context _context;
     private SurfaceView mPreviewView;
-    private Activity activity = null;
+    //private Activity activity = null;
     private FrameLayout framelayout;
     private IjkVideoView mIJKPlayerView;
 
@@ -37,10 +37,10 @@ public class RCTIJKPlayerView extends FrameLayout {
         return this.mIJKPlayerView;
     }
 
-    public RCTIJKPlayerView(Context context, Activity activity) {
+    public RCTIJKPlayerView(Context context) {
         super(context);
         this._context = context;
-        this.activity = activity;
+        //this.activity = activity;
         Log.e(TAG, "*******constructor start");
         // framelayout = new FrameLayout(context);
 
