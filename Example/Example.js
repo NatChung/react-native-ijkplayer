@@ -44,7 +44,7 @@ export default class Example extends React.Component {
         };
     }
     componentDidMount() {
-        let url = "http://devimages.apple.com.edgekey.net/streaming/examples/bipbop_4x3/gear1/prog_index.m3u8";
+        let url = "https://s3-ap-southeast-1.amazonaws.com/leday-videos/shin.mp4";
         // let url = "/Users/cong/Downloads/111.mov";
         this.rctijkplayer.start({url: url});
     }
